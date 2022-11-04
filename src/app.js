@@ -32,8 +32,6 @@ function formatDay(timestamp) {
 
 function displayForecast(response) {
   let forecast = response.data.daily;
-}
-
 let forecastElement = document.querySelector("#forecast");
 let forecastHTML = `<div class="row">`;
 forecast.forEach(function (forecastDay, index) {
@@ -54,7 +52,7 @@ forecast.forEach(function (forecastDay, index) {
                 <div class="weather-forecast-temperature">
                   <span class="weather-forecast-maximum">${Math.round(
                     forecastDay.temp.max
-                  )}° </span> ${index}
+                  )}° </span>
                   <span class="weather-forecast-minimum">${Math.round(
                     forecastDay.temp.min
                   )}° </span>
@@ -115,4 +113,3 @@ let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
 search("Paris");
-displayForecast();
