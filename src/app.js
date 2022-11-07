@@ -33,13 +33,13 @@ function formatDay(timestamp) {
 function displayForecast(response) {
   let forecast = response.data.daily;
 
-let forecastElement = document.querySelector("#forecast");
-let forecastHTML = `<div class="row">`;
-forecast.forEach(function (forecastDay, index) {
-  if (index < 6) {
-    forecastHTML =
-      forecastHTML +
-      `<div class="col-2">
+  let forecastElement = document.querySelector("#forecast");
+  let forecastHTML = `<div class="row">`;
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 6) {
+      forecastHTML =
+        forecastHTML +
+        `<div class="col-2">
                 <div class="weather-forecast-date">${formatDay(
                   forecastDay.dt
                 )}</div>
@@ -59,10 +59,11 @@ forecast.forEach(function (forecastDay, index) {
                   )}° </span>
                 </div>
               </div>`;
-  }
-});
-forecastHTML = forecastHTML + `</div>`;
-forecastElement.innerHTML = forecastHTML;
+    }
+  });
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
 
 function getForecast(coordinates) {
   let apiKey = "c4dc2e0c8a3a63bf1c85246a3f5040b5";
